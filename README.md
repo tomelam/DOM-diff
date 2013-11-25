@@ -10,3 +10,5 @@ DOM nodes are preferred over remove-insert operations.
 is not in working state at the moment.
 
 QUnit tests: http://pomax.github.io/DOM-diff/tests/
+
+The project and its code is in the public domain.
