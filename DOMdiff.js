@@ -264,6 +264,15 @@
       if (gaps1[i] === true) {
         node = t1.childNodes[i];
         if (node.nodeType === 3) {
+
+          if (t2.childNodes[i].nodeType === 3) {
+            return new Diff({
+              action: MODIFY_TEXT_ELEMENT,
+              route: route.concat(i),
+              oldValue: node.data,
+              newValue: t2.childNodes[i].data
+            });
+          }            
           return new Diff({
             action: REMOVE_TEXT_ELEMENT,
             route: route.concat(i),
@@ -279,6 +288,7 @@
       if (gaps2[i] === true) {
         node = t2.childNodes[i];
         if (node.nodeType === 3) {
+            console.log("adding")
           return new Diff({
             action: ADD_TEXT_ELEMENT,
             route: route.concat(i),
